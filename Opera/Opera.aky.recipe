@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest version of Opera and creates a package.</string>
+		<string>Downloads the latest version of Opera, creates a package and reads information for aky.</string>
 		<key>Identifier</key>
 		<string>com.github.ahousseini-recipes-aky.aky.Opera</string>
 		<key>Input</key>
