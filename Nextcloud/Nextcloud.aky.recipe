@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>Nextcloud</string>
 			<key>AKY_RECIPE</key>
-			<string>Nextcloud</string>
+			<string>nextcloud</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
