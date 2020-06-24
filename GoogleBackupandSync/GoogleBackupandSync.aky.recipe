@@ -3,27 +3,27 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest version of Opera, creates a package and reads information for aky.</string>
+		<string>Downloads the latest version of GoogleBackupandSync, creates a package and reads information for aky.</string>
 		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes-aky.aky.Opera</string>
+		<string>com.github.ahousseini-recipes-aky.aky.GoogleBackupandSync</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>
-			<string>Opera</string>
+			<string>GoogleBackupandSync</string>
 			<key>AKY_RECIPE</key>
-			<string>opera</string>
+			<string>backupandsync</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
 		<key>ParentRecipe</key>
-		<string>com.github.amsysuk-recipes.pkg.opera</string>
+		<string>com.github.nstrauss.pkg.BackupandSync</string>
 		<key>Process</key>
 		<array>
 			<dict>
 				<key>Arguments</key>
 				<dict>
 					<key>input_plist_path</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/Opera.app/Contents/Info.plist</string>
+					<string>%RECIPE_CACHE_DIR%/payload/Applications/Backup and Sync.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
 					<string>CFBundleShortVersionString</string>
 				</dict>
