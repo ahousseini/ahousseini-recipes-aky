@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>Plex Media Player</string>
 			<key>AKY_RECIPE</key>
-			<string>Plex Media Player</string>
+			<string>plexmediaplayer</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
