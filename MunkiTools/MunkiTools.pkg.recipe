@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Description</key>
-	<string>Note: munkitools does not include a code signature. If your organization requires code signature, it is recommended to internally sign the application.
+	<dict>
+		<key>Description</key>
+		<string>Note: munkitools does not include a code signature. If your organization requires code signature, it is recommended to internally sign the application.
 
 Downloads version 3 of the Munki tools via the official releases listing on GitHub. You can set INCLUDE_PRERELEASES to any value to have this recipe pull prerelease versions.
 
@@ -14,118 +14,118 @@ This recipe cannot be overridden to pull a download from an alternate location s
 
 The GitHubReleasesInfoProvider processor used by this recipe also respects an input variable: ''sort_by_highest_tag_names'', which, if set, will ignore the post dates of the releases and instead sort descending by tag names according to LooseVersion semantics.
 </string>
-	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes-aky.pkg.MunkiTools</string>
-	<key>Input</key>
-	<dict>
-		<key>INCLUDE_PRERELEASES</key>
-		<string></string>
-		<key>MAJOR_VERSION</key>
-		<string>5</string>
-		<key>NAME</key>
-		<string>MunkiTools</string>
-		<key>STOPPROCESSINGIF_PREDICATE</key>
-		<string>download_changed == False</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.5.0</string>
-	<key>Process</key>
-	<array>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes-aky.pkg.MunkiTools</string>
+		<key>Input</key>
 		<dict>
-			<key>Arguments</key>
+			<key>INCLUDE_PRERELEASES</key>
+			<string/>
+			<key>MAJOR_VERSION</key>
+			<string>5</string>
+			<key>NAME</key>
+			<string>MunkiTools</string>
+			<key>STOPPROCESSINGIF_PREDICATE</key>
+			<string>download_changed == False</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>0.5.0</string>
+		<key>Process</key>
+		<array>
 			<dict>
-				<key>asset_regex</key>
-				<string>^munkitools-%MAJOR_VERSION%.*?pkg$</string>
-				<key>github_repo</key>
-				<string>munki/munki</string>
-				<key>include_prereleases</key>
-				<string>%INCLUDE_PRERELEASES%</string>
-			</dict>
-			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>%STOPPROCESSINGIF_PREDICATE%</string>
-			</dict>
-			<key>Comment</key>
-			<string>Checks if the file already exists in the cache</string>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
+				<key>Arguments</key>
 				<dict>
-					<key>Profiles</key>
-					<string>0755</string>
-					<key>Profiles/vpn</key>
-					<string>0755</string>
+					<key>asset_regex</key>
+					<string>^munkitools-%MAJOR_VERSION%.*?pkg$</string>
+					<key>github_repo</key>
+					<string>munki/munki</string>
+					<key>include_prereleases</key>
+					<string>%INCLUDE_PRERELEASES%</string>
 				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/Scripts</string>
+				<key>Processor</key>
+				<string>GitHubReleasesInfoProvider</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
 				<dict>
+					<key>predicate</key>
+					<string>%STOPPROCESSINGIF_PREDICATE%</string>
 				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				<key>Comment</key>
+				<string>Checks if the file already exists in the cache</string>
+				<key>Processor</key>
+				<string>StopProcessingIf</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/Scripts/munkitools-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pathname%</string>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
 			<dict>
-				<key>choices_pkg_path</key>
-				<string>%pkg_path%</string>
-				<key>choices_xml_dest</key>
-				<string>%RECIPE_CACHE_DIR%/Scripts/choices.xml</string>
-				<key>desired_choices</key>
-				<array>
-					<string>core</string>
-					<string>python</string>
-					<string>admin</string>
-					<string>launchd</string>
-					<string>app_usage</string>
-				</array>
+				<key>Arguments</key>
+				<dict>
+					<key>pkgdirs</key>
+					<dict>
+						<key>Profiles</key>
+						<string>0755</string>
+						<key>Profiles/vpn</key>
+						<string>0755</string>
+					</dict>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgRootCreator</string>
 			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.recipes.commonprocessors/ChoicesXMLGenerator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
 			<dict>
-				<key>file_content</key>
-				<string>#!/bin/bash
+				<key>Arguments</key>
+				<dict>
+					<key>pkgdirs</key>
+					<dict>
+				</dict>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgRootCreator</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pkg_path</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts/munkitools-%version%.pkg</string>
+					<key>source_pkg</key>
+					<string>%pathname%</string>
+				</dict>
+				<key>Processor</key>
+				<string>PkgCopier</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>choices_pkg_path</key>
+					<string>%pkg_path%</string>
+					<key>choices_xml_dest</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts/choices.xml</string>
+					<key>desired_choices</key>
+					<array>
+						<string>core</string>
+						<string>python</string>
+						<string>admin</string>
+						<string>launchd</string>
+						<string>app_usage</string>
+					</array>
+				</dict>
+				<key>Processor</key>
+				<string>com.github.grahampugh.recipes.commonprocessors/ChoicesXMLGenerator</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>file_content</key>
+					<string>#!/bin/bash
 ## script to install Munki Core Tools and MunkiPython only
 
 DIR=$(dirname "$0")
@@ -139,39 +139,39 @@ else
     exit 1
 fi
 </string>
-				<key>file_mode</key>
-				<string>0755</string>
-				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-					</array>
-					<key>id</key>
-					<string>com.github.ahousseini.recipes.pkg.MunkiTools</string>
-					<key>pkgname</key>
-					<string>munkitools-core-plus-python-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
-					<key>pkgtype</key>
-					<string>flat</string>
-					<key>scripts</key>
-					<string>Scripts</string>
-					<key>version</key>
-					<string>%version%</string>
+					<key>file_mode</key>
+					<string>0755</string>
+					<key>file_path</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
 				</dict>
+				<key>Processor</key>
+				<string>FileCreator</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
-		</dict>
-	</array>
-</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>pkg_request</key>
+					<dict>
+						<key>chown</key>
+						<array>
+					</array>
+						<key>id</key>
+						<string>com.github.ahousseini.recipes.pkg.MunkiTools</string>
+						<key>pkgname</key>
+						<string>munkitools-%version%</string>
+						<key>pkgroot</key>
+						<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+						<key>pkgtype</key>
+						<string>flat</string>
+						<key>scripts</key>
+						<string>Scripts</string>
+						<key>version</key>
+						<string>%version%</string>
+					</dict>
+				</dict>
+				<key>Processor</key>
+				<string>PkgCreator</string>
+			</dict>
+		</array>
+	</dict>
 </plist>
