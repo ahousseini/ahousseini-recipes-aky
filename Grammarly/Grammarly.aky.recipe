@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of Grammarly, creates a package and reads information for aky.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes-aky.aky.Grammarly</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Grammarly</string>
+			<key>AKY_RECIPE</key>
+			<string>Grammarly</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>ParentRecipe</key>
+		<string>com.github.homebysix.pkg.Grammarly</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/Grammarly.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
