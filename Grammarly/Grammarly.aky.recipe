@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>Grammarly</string>
 			<key>AKY_RECIPE</key>
-			<string>Grammarly</string>
+			<string>grammarly</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
