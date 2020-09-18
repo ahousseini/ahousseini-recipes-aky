@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>Ultimaker Cura</string>
 			<key>AKY_RECIPE</key>
-			<string>Ultimaker Cura</string>
+			<string>ultimakercura</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
