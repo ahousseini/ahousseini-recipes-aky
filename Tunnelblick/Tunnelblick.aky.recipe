@@ -9,9 +9,9 @@
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>
-			<string>tunnelblick</string>
-			<key>AKY_RECIPE</key>
 			<string>Tunnelblick</string>
+			<key>AKY_RECIPE</key>
+			<string>tunnelblick</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
