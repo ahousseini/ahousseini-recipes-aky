@@ -8,6 +8,8 @@
 		<string>com.github.ahousseini-recipes.aky.ParallelsDesktop</string>
 		<key>Input</key>
 		<dict>
+			<key>AKY_RECIPE</key>
+			<string>parallelsdesktop</string>
 			<key>NAME</key>
 			<string>Parallels Desktop</string>
 		</dict>
