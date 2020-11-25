@@ -8,8 +8,6 @@
 		<string>com.github.ahousseini-recipes-aky.aky.R</string>
 		<key>Input</key>
 		<dict>
-			<key>NAME</key>
-			<string>R</string>
 			<key>AKY_RECIPE</key>
 			<string>R</string>
 		</dict>
