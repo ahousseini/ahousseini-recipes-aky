@@ -9,7 +9,7 @@
 		<key>Input</key>
 		<dict>
 			<key>AKY_RECIPE</key>
-			<string>R</string>
+			<string>r</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
