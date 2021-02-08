@@ -87,7 +87,7 @@ installer -pkg "/Applications/Wireshark.app/Contents/Resources/Extras/Install Ch
 				<key>Arguments</key>
 				<dict>
 					<key>force_pkg_build</key>
-					<true/>
+					<false/>
 					<key>pkg_request</key>
 					<dict>
 						<key>chown</key>
