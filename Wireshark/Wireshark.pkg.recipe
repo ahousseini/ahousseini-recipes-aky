@@ -61,9 +61,13 @@
 				<dict>
 					<key>file_content</key>
 					<string>#!/bin/bash
+
 installer -pkg "/Applications/Wireshark.app/Contents/Resources/Extras/Add Wireshark to the system path.pkg" -target /
 installer -pkg "/Applications/Wireshark.app/Contents/Resources/Extras/Install ChmodBPF.pkg" -target /
-</string>
+
+currentuser="$(scutil &lt;&lt;&lt; "show State:/Users/ConsoleUser" | awk '/Name :/ &amp;&amp; ! /loginwindow/ { print $3 }')"
+
+dseditgroup -q -o edit -a "${currentuser}" -t user "access_bpf"</string>
 					<key>file_mode</key>
 					<string>0755</string>
 					<key>file_path</key>
