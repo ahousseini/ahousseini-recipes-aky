@@ -115,3 +115,11 @@
   language: python
   pass_filenames: false
   always_run: true
+
+- id: shellcheck
+  name: shellcheck
+  description: Test shell scripts with shellcheck
+  entry: shellcheck
+  language: python
+  types: [shell]
+  require_serial: true # shellcheck can detect sourcing this way
