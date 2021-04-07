@@ -1,24 +1,22 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-ast
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: fix-encoding-pragma
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
   - repo: https://github.com/python/black
-    rev: '20.8b1'
+    rev: 20.8b1
     hooks:
       - id: black
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: 'v5.8.0'
-    hooks:
-      - id: isort
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: '3.9.0'
-    hooks:
-      - id: flake8
-  - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: 'v1.10.1'
-    hooks:
-      - id: check-autopkg-recipes
-        args: [
-            '--recipe-prefix',
-            'com.github.ahousseini-recipes-aky.',
-            '--',
-          ]
-      - id: forbid-autopkg-overrides
-      - id: forbid-autopkg-trust-info
