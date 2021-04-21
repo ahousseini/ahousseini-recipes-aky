@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of FileMakerPro, creates a package and reads information for aky.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes-aky.aky.FileMakerPro</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>FileMakerPro</string>
+			<key>AKY_RECIPE</key>
+			<string>filemakerpro</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>ParentRecipe</key>
+		<string>com.github.grahampugh.recipes.download.FileMakerPro</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>input_plist_path</key>
+					<string>%pathname%/FileMaker Pro.app/Contents/Info.plist</string>
+					<key>plist_version_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+				<key>Processor</key>
+				<string>Versioner</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>AppPkgCreator</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
