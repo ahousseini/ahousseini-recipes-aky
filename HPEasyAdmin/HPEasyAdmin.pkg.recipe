@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Download the latest version of HP Easy Admin and generates a package.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.pkg.HPEasyAdmin</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>HP Easy Admin</string>
+		</dict>
+		<key>ParentRecipe</key>
+		<string>com.github.ahousseini-recipes.download.HPEasyAdmin</string>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>app_path</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/HP Easy Admin.app</string>
+				</dict>
+				<key>Processor</key>
+				<string>AppPkgCreator</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
