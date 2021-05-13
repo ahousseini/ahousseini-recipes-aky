@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of LEGO Education WeDo 2.0.</string>
+		<key>Identifier</key>
+		<string>com.github.ahousseini-recipes.download.LEGOEducationWeDo2.0</string>
+		<key>Input</key>
+		<dict>
+			<key>APP_FILENAME</key>
+			<string>WeDo 2.0</string>
+			<key>NAME</key>
+			<string>LEGO Education WeDo 2.0</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>1.0.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>re_pattern</key>
+					<string>https://le-www-live-s.legocdn.com/downloads/WeDo2/WeDo2_Full_[0-9\.]*_Global_OSX.pkg</string>
+					<key>result_output_var_name</key>
+					<string>url</string>
+					<key>url</key>
+					<string>https://education.lego.com/page-data/en-us/downloads/wedo-2/software/page-data.json</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLTextSearcher</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: LEGO Education (9YZJD9MXPZ)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+					<key>input_path</key>
+					<string>%pathname%</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
