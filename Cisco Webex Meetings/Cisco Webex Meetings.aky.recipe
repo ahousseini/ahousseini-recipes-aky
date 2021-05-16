@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest version of Cisco Webex Meetings.</string>
+		<string>Downloads the latest version of Cisco Webex Meetings and reads information for aky.</string>
 		<key>Identifier</key>
 		<string>com.github.ahousseini-recipes.aky.CiscoWebexMeetings</string>
 		<key>Input</key>
