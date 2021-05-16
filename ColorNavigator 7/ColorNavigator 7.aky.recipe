@@ -3,11 +3,13 @@
 <plist version="1.0">
 	<dict>
 		<key>Description</key>
-		<string>Downloads the latest version of ColorNavigator 7.</string>
+		<string>Downloads the latest version of ColorNavigator 7 and reads information for aky.</string>
 		<key>Identifier</key>
 		<string>com.github.ahousseini-recipes.aky.ColorNavigator7</string>
 		<key>Input</key>
 		<dict>
+			<key>AKY_RECIPE</key>
+			<string>colornavigator7</string>
 			<key>NAME</key>
 			<string>ColorNavigator 7</string>
 		</dict>
