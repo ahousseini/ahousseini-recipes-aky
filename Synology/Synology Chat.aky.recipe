@@ -11,7 +11,7 @@
 			<key>NAME</key>
 			<string>Synology Chat</string>
 			<key>AKY_RECIPE</key>
-		<string>synologychat</string>
+			<string>synologychat</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
