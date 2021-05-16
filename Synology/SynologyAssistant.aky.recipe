@@ -10,6 +10,8 @@
 		<dict>
 			<key>NAME</key>
 			<string>SynologyAssistant</string>
+			<key>AKY_RECIPE</key>
+			<string>synologyassistant</string>
 		</dict>
 		<key>MinimumVersion</key>
 		<string>1.0.0</string>
