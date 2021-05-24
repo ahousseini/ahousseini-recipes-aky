@@ -8,6 +8,8 @@
 		<string>com.github.ahousseini-recipes.pkg.VLC</string>
 		<key>Input</key>
 		<dict>
+			<key>AKY_RECIPE</key>
+			<string>vlc</string>
 			<key>NAME</key>
 			<string>VLC</string>
 		</dict>
