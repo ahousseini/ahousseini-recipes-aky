@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Identifier</key>
-		<string>com.github.ahousseini-recipes.pkg.Docker</string>
+		<string>com.github.ahousseini-recipes.pkg.DockerARM</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>
