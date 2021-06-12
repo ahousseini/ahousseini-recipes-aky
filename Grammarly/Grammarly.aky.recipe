@@ -25,14 +25,10 @@
 					<key>input_plist_path</key>
 					<string>%pathname%/Grammarly.app/Contents/Info.plist</string>
 					<key>plist_version_key</key>
-					<string>CFBundleShortVersionString</string>
+					<string>CFBundleVersion</string>
 				</dict>
 				<key>Processor</key>
 				<string>Versioner</string>
-			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
 			</dict>
 		</array>
 	</dict>
