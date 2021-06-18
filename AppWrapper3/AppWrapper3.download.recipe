@@ -24,13 +24,6 @@
 					<string>%NAME%.dmg</string>
 					<key>url</key>
 					<string>https://www.ohanaware.com/appwrapper/appWrapper3.dmg</string>
-					<key>request_headers</key>
-					<dict>
-						<key>User-Agent</key>
-						<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15</string>
-						<key>Accept</key>
-						<string>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</string>
-					</dict>
 				</dict>
 				<key>Processor</key>
 				<string>URLDownloader</string>
